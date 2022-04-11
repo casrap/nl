@@ -21,8 +21,20 @@ enum RadioMessage {
     r = 57643,
     s = 45537,
     t = 6833,
-    u = 39706
+    u = 39706,
+    v = 38555,
+    w = 54422,
+    x = 36564
 }
+radio.onReceivedMessage(RadioMessage.w, function () {
+    basic.showLeds(`
+        # # # # .
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        `)
+})
 radio.onReceivedMessage(RadioMessage.o, function () {
     basic.showLeds(`
         . . . . .
@@ -134,6 +146,15 @@ radio.onReceivedMessage(RadioMessage.h, function () {
         # # # # #
         `)
 })
+radio.onReceivedMessage(RadioMessage.v, function () {
+    basic.showLeds(`
+        # # # . .
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
+        `)
+})
 radio.onReceivedMessage(RadioMessage.m, function () {
     basic.showLeds(`
         . . . . .
@@ -149,6 +170,15 @@ radio.onReceivedMessage(RadioMessage.f, function () {
         . . . . .
         . . . . .
         # # . . .
+        # # # # #
+        `)
+})
+radio.onReceivedMessage(RadioMessage.x, function () {
+    basic.showLeds(`
+        # # # # #
+        # # # # #
+        # # # # #
+        # # # # #
         # # # # #
         `)
 })
@@ -366,6 +396,24 @@ basic.forever(function () {
 basic.forever(function () {
     if (ampa == 21) {
         radio.sendMessage(RadioMessage.u)
+        basic.pause(30000)
+    }
+})
+basic.forever(function () {
+    if (ampa == 22) {
+        radio.sendMessage(RadioMessage.v)
+        basic.pause(30000)
+    }
+})
+basic.forever(function () {
+    if (ampa == 23) {
+        radio.sendMessage(RadioMessage.w)
+        basic.pause(30000)
+    }
+})
+basic.forever(function () {
+    if (ampa == 24) {
+        radio.sendMessage(RadioMessage.x)
         basic.pause(30000)
     }
 })
