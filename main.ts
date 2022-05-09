@@ -304,10 +304,7 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
-    if (ampa == 8) {
-        radio.sendMessage(RadioMessage.g)
-        basic.pause(30000)
-    }
+	
 })
 basic.forever(function () {
     if (ampa == 9) {
